@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Лабораторная работа 5</title>
+	</head>
+	<body>
+		<script>		
+			var str=prompt("Введите строку");
+			function Atbash(str) {  
+
+			    var a = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯ";
+			    var b = "ЯЮЭЪЫЬЩШЧЦХФУТСРПОНМЛКЙИЗЖЁЕДГВБА";
+			    var c = "абвгдеёжзийклмнопрстуфхцчшщьыъэюя";
+			    var d = "яюэъыьщшчцхфутсрпонмлкйизжёедгвба";
+			    var string = "";
+
+			    for (var i = 0; i < str.length; i++) {
+			        var letra = str.charAt(i);
+			        
+					if (/[^а-яА-Я]/.test(str[i])) {
+						string = string+str[i];	
+					}
+					else if (str[i] === str[i].toUpperCase()) {
+					    	var letra2 = a.indexOf(letra);
+					    	var letra3 = b.charAt(letra2);
+					    	string = string+letra3;
+				    } 
+				    else {
+					    	var letra4 = c.indexOf(letra);
+					    	var letra5 = d.charAt(letra4);
+					    	string = string + letra5;
+				    }
+
+			    }
+
+			    return string;
+			}
+
+			alert(Atbash(str));
+		</script>
+	</body>
+</html>
